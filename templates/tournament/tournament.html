@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Demo</title>
+        <link rel='stylesheet' type='text/css' href='{{ MEDIA_URL }}tournament/c/tournaments.css' />
+        <link rel='stylesheet' type='text/css' href='{{ MEDIA_URL }}tournament/c/theme.css' />
+        <script type="text/javascript" src="{{ MEDIA_URL }}j/mootoolsCore.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}j/mootoolsMore.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}tournament/j/tournament.canvas.js"></script>
+        <style type='text/css'>
+            body { padding: 0; margin: 0; }
+            #main1 {
+                position: relative;
+                width: 800px;
+                height: 800px;
+                <!-- border: 1px solid #000; -->
+            }
+        </style>
+        <script type="text/javascript">
+            var c;
+            window.addEvent('domready', function() {
+                c = new Tourn.Bracket('main1', {
+                    initialSpacing: 10,
+                    onTeamClick: function(t) {
+                        console.log(t.index)
+                    }
+                });
+                new Request.JSON({
+                    url: '/static/tournament/data2.json',
+                    noCache: true,
+                    onSuccess: function(res) {
+                        c.load(res.test1);
+                        c.setTeamSize();
+                        c.render();
+                        c.update();
+                        c.render();
+
+                    }
+                }).GET({json: true});
+                //c.save();
+            });
+            
+        </script>
+    </head>
+    <body>
+        <div id="main1"> 
+            
+        </div> 
+    </body>
+</html>

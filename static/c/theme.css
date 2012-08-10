@@ -1,0 +1,54 @@
+body { margin: 0;padding: 0; background: #666;}
+
+#main {
+	margin: 100px auto;
+}
+
+/* Main components */
+.tourn-main {
+	font-family: Verdana;
+}
+.tourn-round {
+	
+}
+.tourn-match {
+	border-right: 1px solid #181818;
+}
+.tourn-team {
+	color: #f0f0f0;
+}
+/* Team states */
+.tourn-team.tourn-win > div {
+	
+}
+.tourn-team.tourn-lose > div {
+	
+}
+.tourn-team.tourn-champ > div {
+	
+}
+.tourn-team.tourn-bye > div {
+	
+}
+
+/* Tourn Team */
+.tourn-team1 > div {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#686868), to(#333));
+}
+.tourn-team2 > div {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#686868), to(#4d4d4d));
+}
+.tourn-teamindex {
+	width: 15%;
+	margin-right: 4px;
+	background: #333;
+}
+.tourn-team > div {
+	border: 1px solid #181818;
+	border-width: 1px 0;
+	margin: -1px 0;
+}
+/* Player Lines */
+.tourn-player {
+	
+}

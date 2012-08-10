@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Demo</title>
+		<link rel='stylesheet' type='text/css' href='{{ MEDIA_URL }}tournament/c/tournaments.css' />
+		<link rel='stylesheet' type='text/css' href='{{ MEDIA_URL }}tournament/c/theme.css' />
+		<script type="text/javascript" src="{{ MEDIA_URL }}javascript/mootoolsCore.js"></script>
+		<script type="text/javascript" src="{{ MEDIA_URL }}javascript/mootoolsMore.js"></script>
+		<script type="text/javascript" src="{{ MEDIA_URL }}tournament/j/tournament.js"></script>
+		<style type='text/css'>
+			#main1 {
+				position: relative;
+				width: 687px;
+				height: 400px;
+				<!-- border: 1px solid #000; -->
+			}
+		</style>
+		<script type="text/javascript">
+			var c;
+			var d = {"rounds":[[{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"2","url":"google.com"}]],"winner":0},{"teams":[[{"name":"3","url":"google.com"}],[{"name":"4","url":"google.com"}]],"winner":0},{"teams":[[{"name":"5","url":"google.com"}],[{"name":"6","url":"google.com"}]],"winner":0},{"teams":[[{"name":"7","url":"google.com"}],[{"name":"8","url":"google.com"}]],"winner":0},{"teams":[[{"name":"9","url":"google.com"}],[{"name":"10","url":"google.com"}]],"winner":0},{"teams":[[{"name":"11","url":"google.com"}],[{"name":"12","url":"google.com"}]],"winner":0},{"teams":[[{"name":"13","url":"google.com"}],[{"name":"14","url":"google.com"}]],"winner":0},{"teams":[[{"name":"15","url":"google.com"}],[{"name":"16","url":"google.com"}]],"winner":0}],[{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"3","url":"google.com"}]],"winner":0},{"teams":[[{"name":"5","url":"google.com"}],[{"name":"7","url":"google.com"}]],"winner":0},{"teams":[[{"name":"9","url":"google.com"}],[{"name":"11","url":"google.com"}]],"winner":0},{"teams":[[{"name":"13","url":"google.com"}],[{"name":"15","url":"google.com"}]],"winner":0}],[{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"5","url":"google.com"}]],"winner":0},{"teams":[[{"name":"9","url":"google.com"}],[{"name":"13","url":"google.com"}]],"winner":0}],[{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"9","url":"google.com"}]],"winner":0}],[{"teams":[[{"name":"1","url":"http://www.google.com"}]],"winner":0}]]};
+			var d1 = {"rounds":[[
+				{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"2","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"3","url":"google.com"}],[{"name":"4","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"5","url":"google.com"}],[{"name":"6","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"7","url":"google.com"}],[{"name":"8","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"9","url":"google.com"}],[{"name":"10","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"11","url":"google.com"}],[{"name":"12","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"13","url":"google.com"}],[{"name":"14","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"15","url":"google.com"}]],"winner":0}
+			]]};
+			var d2 = {"rounds":[[
+				{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"2","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"3","url":"google.com"}],[{"name":"4","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"5","url":"google.com"}],[{"name":"6","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"7","url":"google.com"}],[{"name":"8","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"9","url":"google.com"}],[{"name":"10","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"11","url":"google.com"}],[{"name":"12","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"13","url":"google.com"}],[{"name":"14","url":"google.com"}]],"winner":0}
+			]]};
+			var d3 = {"rounds":[[
+				{"teams":[[{"name":"1","url":"http://www.google.com"}],[{"name":"2","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"3","url":"google.com"}],[{"name":"4","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"5","url":"google.com"}],[{"name":"6","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"7","url":"google.com"}],[{"name":"8","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"9","url":"google.com"}],[{"name":"10","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"11","url":"google.com"}],[{"name":"12","url":"google.com"}]],"winner":0},
+				{"teams":[[{"name":"13","url":"google.com"}]],"winner":0}
+			]]};
+			var d4 = {"rounds":[[
+				{"teams":[{"players":[{"name":"1"},{"name":"1"}],"bye":false},{"players":[{"name":"2","url":"google.com"}],"bye":false}],"winner":-1},
+				{"teams":[{"players":[{"name":"3","url":"google.com"}],"bye":false},{"players":[{"name":"4","url":"google.com"}],"bye":false}],"winner":-1},
+				{"teams":[{"players":[{"name":"5","url":"google.com"}],"bye":false},{"players":[{"name":"6","url":"google.com"}],"bye":false}],"winner":-1},
+				{"teams":[{"players":[{"name":"7","url":"google.com"}],"bye":false},{"players":[{"name":"8","url":"google.com"}],"bye":false}],"winner":-1},
+				{"teams":[{"players":[{"name":"9","url":"google.com"}],"bye":false},{"players":[{"name":"10","url":"google.com"}],"bye":false}],"winner":-1},
+				{"teams":[{"players":[{"name":"11","url":"google.com"}],"bye":false},{"players":[{"name":"12","url":"google.com"}],"bye":false}],"winner":-1},
+				{"teams":[{"players":[{"name":"13","url":"google.com"}],"bye":false},{"players":[{"name":"BYE"}],"bye":true}],"winner":0},
+				{"teams":[{"players":[{"name":"BYE"}],"bye":true},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[],"winner":-1},{"teams":[],"winner":-1},{"teams":[],"winner":-1},{"teams":[{"players":[{"name":"13","url":"google.com"}],"bye":false},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[],"winner":-1},{"teams":[{"players":[{"name":"13","url":"google.com"}],"bye":false}],"winner":-1}],[{"teams":[],"winner":-1}],[{"teams":[],"winner":-1}]]};
+			var d5 = {
+				"rounds": [
+					[
+						{"teams": [{"players": [{"name": "Team 1"}]}, {"players": [{"name": "Team 2"}]}]},
+						{"teams": [{"players": [{"name": "Team 3"}]}, {"players": [{"name": "Team 4"}]}]},
+						{"teams": [{"players": [{"name": "Team 5"}]}, {"players": [{"name": "Team 6"}]}]},
+						{"teams": [{"players": [{"name": "Team 5"}]}, {"players": [{"name": "Team 6"}]}]},
+						{"teams": [{"players": [{"name": "Team 5"}]}, {"players": [{"name": "Team 6"}]}]},
+						{"teams": [{"players": [{"name": "Team 5"}]}, {"players": [{"name": "Team 6"}]}]},
+						{"teams": [{"players": [{"name": "Team 5"}]}, {"players": [{"name": "Team 6"}]}]}
+					]
+				]
+			}
+			var d6 = {"rounds":[[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 2"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 3"}],"bye":false},{"players":[{"name":"Team 4"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"BYE"}],"bye":true},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 3"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"BYE"}],"bye":true},{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"BYE"}],"bye":true}],"winner":1}],[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":0}],[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":0}],[{"teams":[{"players":[{"name":"Team 1"}],"bye":false}],"winner":-1}]]};
+			var d7 = {"rounds":[[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 2"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 3"}],"bye":false},{"players":[{"name":"Team 4"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"BYE"}],"bye":true},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 3"}],"bye":false}],"winner":-1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":-1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":-1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[],"winner":-1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false}],"winner":-1}],[{"teams":[],"winner":-1}],[{"teams":[],"winner":-1}]]};
+			var d8 = {"rounds":[[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 2"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 3"}],"bye":false},{"players":[{"name":"Team 4"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 6"}],"bye":false}],"winner":0},{"teams":[{"players":[{"name":"BYE"}],"bye":true},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[{"players":[{"name":"Team 1"}],"bye":false},{"players":[{"name":"Team 3"}],"bye":false}],"winner":1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"BYE"}],"bye":true},{"players":[{"name":"BYE"}],"bye":true}],"winner":0}],[{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 3"}],"bye":false}],"winner":1},{"teams":[{"players":[{"name":"Team 5"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":1}],[{"teams":[{"players":[{"name":"Team 3"}],"bye":false},{"players":[{"name":"Team 5"}],"bye":false}],"winner":0}],[{"teams":[{"players":[{"name":"Team 3"}],"bye":false}],"winner":-1}]]};
+			var d9 = {"rounds":[[0,2,4,6,8,10,12,-1],[0,4,8,-1],[-1,-1],[-1],[-1]],"teams":[{"players":[{"name":"Team 1"}],"bye":false,"index":0},{"players":[{"name":"Team 2"}],"bye":false,"index":1},{"players":[{"name":"Team 3"}],"bye":false,"index":2},{"players":[{"name":"Team 4"}],"bye":false,"index":3},{"players":[{"name":"Team 5"}],"bye":false,"index":4},{"players":[{"name":"Team 6"}],"bye":false,"index":5},{"players":[{"name":"Team 5"}],"bye":false,"index":6},{"players":[{"name":"Team 6"}],"bye":false,"index":7},{"players":[{"name":"Team 5"}],"bye":false,"index":8},{"players":[{"name":"Team 6"}],"bye":false,"index":9},{"players":[{"name":"Team 5"}],"bye":false,"index":10},{"players":[{"name":"Team 6"}],"bye":false,"index":11},{"players":[{"name":"Team 5"}],"bye":false,"index":12},{"players":[{"name":"Team 6"}],"bye":false,"index":13}]};
+			var d10 = {"teams":[{"players":[{"name":"Team 1"}],"bye":false,"index":0},{"players":[{"name":"Team 2"}],"bye":false,"index":1},{"players":[{"name":"Team 3"}],"bye":false,"index":2},{"players":[{"name":"Team 4"}],"bye":false,"index":3},{"players":[{"name":"Team 5"}],"bye":false,"index":4},{"players":[{"name":"Team 6"}],"bye":false,"index":5},{"players":[{"name":"Team 5"}],"bye":false,"index":6},{"players":[{"name":"Team 6"}],"bye":false,"index":7},{"players":[{"name":"Team 5"}],"bye":false,"index":8},{"players":[{"name":"Team 6"}],"bye":false,"index":9},{"players":[{"name":"Team 5"}],"bye":false,"index":10},{"players":[{"name":"Team 6"}],"bye":false,"index":11},{"players":[{"name":"Team 5"}],"bye":false,"index":12},{"players":[{"name":"Team 6"}],"bye":false,"index":13}]};
+			window.addEvent('domready', function() {
+				{% block object_script %}
+				// c = new Tourn.Bracket('tmain', {
+				// 	roundSpacing: 1,
+				// 	initialSpacing: 10,
+				// 	onTeamClick: function(t) {
+				// 		console.log(t.index)
+				// 	}
+				// });
+				// c.load(d10);
+				// c.save();
+				{% endblock %}
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div id="tmain"> 
+			
+		</div> 
+	</body>
+</html>
